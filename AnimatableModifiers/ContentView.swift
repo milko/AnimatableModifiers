@@ -7,10 +7,76 @@
 
 import SwiftUI
 
+// A modifier that animates a font through various sizes.
+struct AnimatableCustomFontModifier: AnimatableModifier {
+    var name: String
+    var size: CGFloat
+
+    var animatableData: CGFloat {
+        get { size }
+        set { size = newValue }
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .font(.custom(name, size: size))
+    }
+}
+
+// For system fonts
+struct AnimatableSystemFontModifier: AnimatableModifier {
+    var size: CGFloat
+    var weight: Font.Weight
+    var design: Font.Design
+
+    var animatableData: CGFloat {
+        get { size }
+        set { size = newValue }
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: size, weight: weight, design: design))
+    }
+}
+
+// To make that easier to use, I recommend wrapping
+// it in a `View` extension, like this:
+extension View {
+    func animatableFont(name: String, size: CGFloat) -> some View {
+        self.modifier(AnimatableCustomFontModifier(name: name, size: size))
+    }
+
+    func animatableSystemFont(size: CGFloat, weight: Font.Weight = .regular, design: Font.Design = .default) -> some View {
+        self.modifier(AnimatableSystemFontModifier(size: size, weight: weight, design: design))
+    }
+}
+
+// An example View trying it out
 struct ContentView: View {
+    @State private var customFontSize: CGFloat = 32
+    @State private var systemFontSize: CGFloat = 32
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Hello, World!")
+                .animatableFont(name: "Optima", size: customFontSize)
+                .onTapGesture {
+                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1).repeatForever()) {
+                        customFontSize = 72
+                    }
+                }
+                .padding(.vertical)
+
+            Text("Hello, World!")
+                .animatableSystemFont(size: systemFontSize)
+                .onTapGesture {
+                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1).repeatForever()) {
+                        systemFontSize = 72
+                    }
+                }
+                .padding(.vertical)
+        }
     }
 }
 
