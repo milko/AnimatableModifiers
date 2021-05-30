@@ -59,20 +59,28 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            Text("Hello!")
                 .animatableFont(name: "Optima", size: customFontSize)
                 .onTapGesture {
-                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1).repeatForever()) {
-                        customFontSize = 72
+                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1).repeatCount(4)) {
+                        if customFontSize == 32 {
+                            customFontSize = 72
+                        } else {
+                            customFontSize = 32
+                        }
                     }
                 }
                 .padding(.vertical)
 
-            Text("Hello, World!")
+            Text("Hello!")
                 .animatableSystemFont(size: systemFontSize)
                 .onTapGesture {
-                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1).repeatForever()) {
-                        systemFontSize = 72
+                    withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1)) {
+                        if systemFontSize == 32 {
+                            systemFontSize = 72
+                        } else {
+                            systemFontSize = 32
+                        }
                     }
                 }
                 .padding(.vertical)
