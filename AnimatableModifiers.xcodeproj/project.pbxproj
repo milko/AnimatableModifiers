@@ -11,6 +11,8 @@
 		C43654882663BCC000A66BFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43654872663BCC000A66BFE /* ContentView.swift */; };
 		C436548A2663BCC200A66BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43654892663BCC200A66BFE /* Assets.xcassets */; };
 		C436548D2663BCC200A66BFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C436548C2663BCC200A66BFE /* Preview Assets.xcassets */; };
+		C47D7C6926640016005C428C /* AnimatableCustomFontModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D7C6826640016005C428C /* AnimatableCustomFontModifierView.swift */; };
+		C47D7C6B266401EA005C428C /* AnimatableSystemFontModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D7C6A266401EA005C428C /* AnimatableSystemFontModifierView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		C43654892663BCC200A66BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C436548C2663BCC200A66BFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C436548E2663BCC200A66BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47D7C6826640016005C428C /* AnimatableCustomFontModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableCustomFontModifierView.swift; sourceTree = "<group>"; };
+		C47D7C6A266401EA005C428C /* AnimatableSystemFontModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableSystemFontModifierView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				C43654892663BCC200A66BFE /* Assets.xcassets */,
 				C436548E2663BCC200A66BFE /* Info.plist */,
 				C436548B2663BCC200A66BFE /* Preview Content */,
+				C47D7C6826640016005C428C /* AnimatableCustomFontModifierView.swift */,
+				C47D7C6A266401EA005C428C /* AnimatableSystemFontModifierView.swift */,
 			);
 			path = AnimatableModifiers;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C43654882663BCC000A66BFE /* ContentView.swift in Sources */,
+				C47D7C6B266401EA005C428C /* AnimatableSystemFontModifierView.swift in Sources */,
 				C43654862663BCC000A66BFE /* AnimatableModifiersApp.swift in Sources */,
+				C47D7C6926640016005C428C /* AnimatableCustomFontModifierView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
